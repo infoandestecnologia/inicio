@@ -586,6 +586,84 @@ textarea {
   justify-self: start;
 }
 
+.faq {
+  background: #fff;
+}
+
+.faq-list {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(10, 31, 46, 0.08);
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.faq-item:hover,
+.faq-item:focus-within,
+.faq-item[open] {
+  border-color: rgba(8, 184, 189, 0.7);
+  box-shadow: 0 16px 34px rgba(10, 31, 46, 0.12);
+}
+
+.faq-item summary {
+  position: relative;
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  padding: 18px 64px 18px 24px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.faq-item[open] summary::after {
+  content: "-";
+}
+
+.faq-item summary:focus-visible {
+  outline: 3px solid rgba(8, 184, 189, 0.35);
+  outline-offset: -3px;
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 24px 22px;
+  color: #5f636b;
+  line-height: 1.55;
+}
+
 .footer {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
@@ -738,6 +816,23 @@ textarea {
 
   .form-body {
     grid-template-columns: 1fr;
+  }
+
+  .faq-list {
+    gap: 12px;
+  }
+
+  .faq-item summary {
+    min-height: 58px;
+    padding: 16px 54px 16px 18px;
+  }
+
+  .faq-item summary::after {
+    right: 18px;
+  }
+
+  .faq-item p {
+    padding: 0 18px 20px;
   }
 
   .footer-inner,
