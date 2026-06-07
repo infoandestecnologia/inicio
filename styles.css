@@ -417,13 +417,34 @@ a {
   white-space: nowrap;
 }
 
-.plan-head strong {
-  font-size: 40px;
+.price-once {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.price-once strong {
+  font-size: 32px;
   line-height: 1;
   font-weight: 600;
 }
 
-.plan-head span {
+.price-once span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.price-month {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.price-month strong,
+.price-month span {
   font-size: 20px;
   font-weight: 700;
 }
