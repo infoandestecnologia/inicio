@@ -1,5 +1,8 @@
-# Capturas de referencia
+# Recursos de diseno
 
-Esta carpeta queda reservada para guardar las capturas exportadas del prototipo ANDES.
+Esta carpeta contiene los recursos visuales usados por la landing ANDES:
 
-Las imagenes pegadas en el chat se usaron como referencia visual para desarrollar la landing, pero no llegaron al workspace como archivos binarios que puedan guardarse directamente.
+- Logo principal.
+- Ilustracion del hero.
+- Iconos de servicios.
+- Isotipo decorativo para la seccion de planes.
