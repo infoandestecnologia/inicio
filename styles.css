@@ -437,6 +437,7 @@ a {
 
 .price-month {
   display: flex;
+  font-size: 20px;
   align-items: baseline;
   justify-content: center;
   gap: 4px;
