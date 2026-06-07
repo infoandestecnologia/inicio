@@ -364,19 +364,28 @@ a {
 }
 
 .plan-card {
+  position: relative;
   display: grid;
   border: 2px solid #123e55;
   border-radius: 18px 18px 6px 6px;
   background: var(--navy-soft);
-  overflow: hidden;
 }
 
 .plan-card.featured {
   border-color: var(--teal);
 }
 
+.plan-card:not(.featured) {
+  margin-top: 58px;
+}
+
 .plan-ribbon {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
   padding: 18px 20px;
+  border-radius: 18px 18px 0 0;
   color: #06212f;
   background: var(--teal);
   text-align: center;
@@ -621,6 +630,10 @@ textarea {
   .service-grid,
   .plans-grid {
     grid-template-columns: 1fr;
+  }
+
+  .plan-card:not(.featured) {
+    margin-top: 0;
   }
 
   .plan-body {
