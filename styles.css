@@ -369,10 +369,14 @@ a {
   border: 2px solid #123e55;
   border-radius: 18px 18px 6px 6px;
   background: var(--navy-soft);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.plan-card.featured {
+.plan-card:hover,
+.plan-card:focus-within {
   border-color: var(--teal);
+  box-shadow: 0 0 0 1px rgba(8, 184, 189, 0.15), 0 18px 36px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
 }
 
 .plan-card:not(.featured) {
