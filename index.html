@@ -237,8 +237,8 @@
                 <input type="text" name="name" placeholder="Nombre" autocomplete="name">
               </label>
               <label>
-                Número de WhatsApp
-                <input type="tel" name="whatsapp" placeholder="+54 9 11 1234 5678" autocomplete="tel">
+                Descripción
+                <textarea name="description" placeholder="Contanos brevemente qué necesitás" rows="4"></textarea>
               </label>
               <button class="btn btn-primary" type="submit">Quiero mi plan a medida <span aria-hidden="true">-&gt;</span></button>
             </div>
@@ -333,12 +333,11 @@
         e.preventDefault();
         const formData = new FormData(form);
         const name = formData.get('name') || '';
-        const whatsapp = formData.get('whatsapp') || '';
+        const description = formData.get('description') || '';
 
-        const message = `Hola, soy ${name}. Quiero mi plan a medida. Mi WhatsApp: ${whatsapp}`;
+        const message = `Hola, soy ${name}. Quiero mi plan a medida. ${description}`;
 
         if (!WHATSAPP_RECIPIENT || WHATSAPP_RECIPIENT === 'RECIPIENT_NUMBER') {
-          // Si no se configuró el número receptor, abrir WhatsApp sin destinatario para que el usuario lo elija.
           const url = `https://web.whatsapp.com/send?text=${encodeURIComponent(message)}`;
           window.open(url, '_blank');
           return;
