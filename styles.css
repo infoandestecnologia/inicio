@@ -346,12 +346,12 @@ a {
 .plans::after {
   content: "";
   position: absolute;
-  left: -42px;
-  bottom: -86px;
-  width: 270px;
-  height: 245px;
-  opacity: 0.38;
-  background: url("dise%C3%B1o/group.webp") left bottom / contain no-repeat;
+  left: -100px;
+  bottom: -120px;
+  width: 520px;
+  height: 520px;
+  opacity: 0.65;
+  background: url("dise%C3%B1o/group.webp") left bottom / 520px auto no-repeat;
 }
 
 .plans-grid {
