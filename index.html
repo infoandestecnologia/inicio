@@ -237,8 +237,8 @@
                 <input type="text" name="name" placeholder="Nombre" autocomplete="name">
               </label>
               <label>
-                Correo electrónico
-                <input type="email" name="email" placeholder="tuempresa@correo.com" autocomplete="email">
+                Número de WhatsApp
+                <input type="tel" name="whatsapp" placeholder="+54 9 11 1234 5678" autocomplete="tel">
               </label>
               <button class="btn btn-primary" type="submit">Quiero mi plan a medida <span aria-hidden="true">-&gt;</span></button>
             </div>
@@ -321,4 +321,32 @@
       </div>
     </footer>
   </body>
+  <script>
+    // Reemplazar 'RECIPIENT_NUMBER' por el número de WhatsApp receptor (solo dígitos, con código de país), por ejemplo: '5491112345678'
+    const WHATSAPP_RECIPIENT = '5491138927113';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.audit-form');
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get('name') || '';
+        const whatsapp = formData.get('whatsapp') || '';
+
+        const message = `Hola, soy ${name}. Quiero mi plan a medida. Mi WhatsApp: ${whatsapp}`;
+
+        if (!WHATSAPP_RECIPIENT || WHATSAPP_RECIPIENT === 'RECIPIENT_NUMBER') {
+          // Si no se configuró el número receptor, abrir WhatsApp sin destinatario para que el usuario lo elija.
+          const url = `https://web.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+          window.open(url, '_blank');
+          return;
+        }
+
+        const url = `https://wa.me/${WHATSAPP_RECIPIENT}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
 </html>
